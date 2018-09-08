@@ -33,36 +33,30 @@ class BBS(PRNG):
     def __init__(self, seed, length):
         super(BBS, self).__init__(seed, length)
 
-    def get_p_and_q(self):
+    # n é p * q
+    def get_n(self):
         threshold = 100
         primes = self.get_list_of_primes(1000)
         while True:
             p = random.choice(primes)
             if (((p % 4) == 3) and p > threshold):
                 break
-
         while True:
             q = random.choice(primes)
             if (((q % 4) == 3) and q > threshold):
                 if ((p != q) and self.are_coprimes(self.seed, p*q)):
                     break
-        return {"p": p, "q": q}
+        return p * q
 
 
     def generate_number(self):
-        primes = self.get_p_and_q()
-        p = primes['p']
-        q = primes['q']
-        n = p * q
-
+        n = self.get_n()
         x = list()
         b = list()
-
         x.append((self.seed ** 2) % n)
         for i in range(self.length):
             x.append((x[-1]**2) % n)
             b.append(x[-1] % 2)
-
         self.generated_number = ''.join(map(str, b))
         return True
 
