@@ -1,2 +1,2 @@
-# prn-generator
-Pseudorandom Number Generator in Python.
+# prng-python
+Pseudorandom Number Generators in Python.
