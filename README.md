@@ -4,7 +4,7 @@ Pseudorandom Number Generators in Python.
 
 Implemented algorithms:
 
-- [ ] Blum Blum Shub
+- [X] Blum Blum Shub
 - [ ] Complementary-multiply-with-carry
 - [ ] Inversive congruential generator
 - [ ] ISAAC (cipher)
