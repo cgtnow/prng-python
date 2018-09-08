@@ -44,19 +44,16 @@ class BBS(PRNG):
         while True:
             q = random.choice(primes)
             if (((q % 4) == 3) and q > threshold):
-                if p != q:
+                if ((p != q) and self.are_coprimes(self.seed, p*q)):
                     break
         return {"p": p, "q": q}
 
 
     def generate_number(self):
-        while True:
-            primes = self.get_p_and_q()
-            p = primes['p']
-            q = primes['q']
-            n = p * q
-            if self.are_coprimes(self.seed, n):
-                break
+        primes = self.get_p_and_q()
+        p = primes['p']
+        q = primes['q']
+        n = p * q
 
         x = list()
         b = list()
