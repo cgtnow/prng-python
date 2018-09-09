@@ -9,7 +9,7 @@ Implemented algorithms:
 - [ ] Inversive congruential generator
 - [ ] ISAAC (cipher)
 - [ ] Lagged Fibonacci generator
-- [ ] Linear congruential generator
+- [X] Linear congruential generator
 - [ ] Linear feedback shift register
 - [ ] Maximal periodic reciprocals
 - [ ] Mersenne twister
